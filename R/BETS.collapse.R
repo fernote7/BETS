@@ -1,55 +1,64 @@
-require(BETS); require(lubridate)
-t1 <- BETS.get(1212)
+# require(BETS); require(lubridate)
+# t1 <- BETS.get(1212)
 
-collapse <- function(x, method = c("sum","mean","3m","6m","gm","index","percentage"), periodicity, begin){
+
+, method = c("sum","mean","3m","6m","gm","index","percentage"), periodicity, begin
+
+collapse <- function(x){
     
     
-    if(missing(periodicity)){ stop("Series periodicity must be supplied.")}
+    # if(missing(periodicity)){ stop("Series periodicity must be supplied.")}
     
-    if(missing(begin)){ begin <- 1}
+    
+    # if(missing(begin)){ begin <- 1}
+
+
+    # Daily to monthly
+        
+        y <- d_to_m(x)
         
     
-    if( periodicity = 12){
-        if( begin < 0 | begin > 12){ stop("Begin must be positive and equal or less than 12.")}
-        
-        
-        
-    } else if( periodicity = 252){
-        if( begin < 0 | begin > 252){ stop("Begin must be positive and equal or less than 252.")}
-        
-        
-    } else if( periodicity = 360){
-        if( begin < 0 | begin > 360){ stop("Begin must be positive and equal or less than 360.")}
-        
-        
-    } else if( periodicity = 365){
-        if( begin < 0 | begin > 365){ stop("Begin must be positive and equal or less than 365.")}
-        
-        
-    } else if( periodicity = 4){
-        if( begin < 0 | begin > 4){ stop("Begin must be positive and equal or less than 4.")}
-        
-        
-    }
-    
-    lubridate::as_date(t1)
-    
-    y <- c()
-    
-    for(i in n:3){
-        y[i] <-  x[i]*x[i-1]*x[i-2]
-    }
-    
-    t1 
-    
-    
+    # if( periodicity == 12){
+    #     if( begin < 0 | begin > 12){ stop("Begin must be positive and equal or less than 12.")}
+    #     
+    #     
+    #     
+    # } else if( periodicity == 252){
+    #     if( begin < 0 | begin > 252){ stop("Begin must be positive and equal or less than 252.")}
+    #     
+    #     
+    # } else if( periodicity == 360){
+    #     if( begin < 0 | begin > 360){ stop("Begin must be positive and equal or less than 360.")}
+    #     
+    #     
+    # } else if( periodicity == 365){
+    #     if( begin < 0 | begin > 365){ stop("Begin must be positive and equal or less than 365.")}
+    #     
+    #     
+    # } else if( periodicity == 4){
+    #     if( begin < 0 | begin > 4){ stop("Begin must be positive and equal or less than 4.")}
+    #     
+    #     
+    # }
+    # 
+    # lubridate::as_date(t1)
+    # 
+    # y <- c()
+    # 
+    # for(i in n:3){
+    #     y[i] <-  x[i]*x[i-1]*x[i-2]
+    # }
+    # 
+    # t1 
     
     
     
+    
+    y
     
 }
 
-
+collapse(11)
 
 geom3 <- function(x, anual = F, frequency){
   # x: ts
@@ -69,4 +78,4 @@ geom3 <- function(x, anual = F, frequency){
   st
 }
 
-geom3(t1)
+# geom3(t1)
